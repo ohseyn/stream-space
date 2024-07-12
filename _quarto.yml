@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "stream space"
+  title: "Stream Space"
   navbar:
     left:
       - href: index.qmd

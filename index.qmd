@@ -3,10 +3,12 @@ title: "stream space"
 jupyter: python3
 ---
 
-This is a Quarto website.
+## 홈페이지 첫 화면입니다!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+안녕하세요, 데이터 분석 오서연입니다. 
 
-```{python}
-1 + 1
-```
+## 24.07.12 수업 내용
+
+- deep copy를 사용해야 합니다.
+1. b = a[:] # 1번
+2. b = a.copy() # 2번
