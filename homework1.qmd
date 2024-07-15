@@ -15,16 +15,16 @@ df_fruit
 ## 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.
 
 ### 가격 평균
+
 ```{python}
 sum(df_fruit['가격'])/len(df_fruit)
 ```
 
 ### 판매량 평균
+
 ```{python}
 sum(df_fruit['판매량'])/len(df_fruit)
 ```
-
-
 
 ## mpg 데이터를 불러와 복사본을 만드세요.
 
@@ -35,8 +35,8 @@ mpg_new = mpg.copy()
 mpg_new
 ```
 
-
 ## 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+
 ```{python}
 mpg_new = mpg_new.rename(columns = {"cty" : "city", "hwy" : "highway"})
 mpg_new
@@ -61,12 +61,11 @@ midwest.info()
 midwest.describe()
 ```
 
-1. head()는 데이터 앞부분을 출력해준다.
-2. tail()은 데이터 뒷부분을 출력해준다.
-3. shape()는 행, 열 개수를 출력한다. (437, 28)로 출력되었으므로 437행, 28열을 뜻한다.
-4. info()는 변수 속성을 출력한다. 변수는 열의 개수와 같으므로 28개이고, 다 non-null 상태이다. 
-즉, 값이 다 존재한다는 뜻이다. 데이터 타입은 int64, float64, object(문자열)로 이루어져 있다. 
-5. describe()는 요약 통계량을 출력한다. 각 데이터의 개수(count), 평균(mean), 표준편차(std), 최소값(min), 1사분위수(25%), 중앙값(50%), 3사분위수(75%), 최대값(max)를 보여준다. 
+1.  head()는 데이터 앞부분을 출력해준다.
+2.  tail()은 데이터 뒷부분을 출력해준다.
+3.  shape()는 행, 열 개수를 출력한다. (437, 28)로 출력되었으므로 437행, 28열을 뜻한다.
+4.  info()는 변수 속성을 출력한다. 변수는 열의 개수와 같으므로 28개이고, 다 non-null 상태이다. 즉, 값이 다 존재한다는 뜻이다. 데이터 타입은 int64, float64, object(문자열)로 이루어져 있다.
+5.  describe()는 요약 통계량을 출력한다. 각 데이터의 개수(count), 평균(mean), 표준편차(std), 최소값(min), 1사분위수(25%), 중앙값(50%), 3사분위수(75%), 최대값(max)를 보여준다.
 
 ## poptoptal(전체 인구) 변수를 total로, popasian(아시아 안구) 변수를 asian으로 수정하세요.
 
@@ -76,7 +75,7 @@ midwest
 midwest.info()
 ```
 
-## total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고,  히스토그램을 만들어 분포를 살펴보세요.
+## total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.
 
 ```{python}
 midwest["asian_percentage"] = ((midwest["asian"] / midwest["total"])*100)
@@ -88,14 +87,15 @@ midwest["asian_percentage"].plot.hist()
 plot.show()
 ```
 
-- 이 그래프는 x축에 전체 인구 대비 아시아 인구 백분율 값이 표현되어 있다. y축에는 각 계급 구간의 빈도가 표현되어 있다. 
+-   이 그래프는 x축에 전체 인구 대비 아시아 인구 백분율 값이 표현되어 있다. y축에는 각 계급 구간의 빈도가 표현되어 있다.
 
 ## 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large', 그 외에는 'small'을 부여한 파생변수를 만들어보세요.
 
 ### 전체 평균
+
 ```{python}
 import numpy as np
-np.mean(midwest["asian_percentage"])
+asian_mean = np.mean(midwest["asian_percentage"])
 ```
 
 ### large, small 부여한 파생변수
@@ -105,8 +105,7 @@ midwest["asian_mean"] = np.where(midwest["asian_percentage"] > asian_mean, "larg
 midwest.tail()
 ```
 
-
-## 'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요. 
+## 'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.
 
 ```{python}
 midwest["asian_mean"].value_counts()
@@ -114,4 +113,3 @@ count_mean = midwest["asian_mean"].value_counts()
 count_mean.plot.bar(rot = 0)
 plot.show()
 ```
-
