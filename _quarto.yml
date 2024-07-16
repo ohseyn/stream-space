@@ -12,6 +12,8 @@ website:
         text: about
       - href: homework1.qmd
         text: homework1
+      - href: homework2.qmd
+        text: homework2
 
 format:
   html:
