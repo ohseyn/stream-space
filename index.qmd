@@ -1,14 +1,17 @@
 ---
 title: "stream space"
+toc: false
 jupyter: python3
+about: 
+    id: hero-Heading
+    template: jolla
+    image: nongdamgom.jpg
+    links:
+        - icon: github
+          text: Github
+          href: https://github.com/ohseyn/stream-space
 ---
 
-## 홈페이지 첫 화면입니다!
+## 안녕하세요!
 
-안녕하세요, 데이터 분석 오서연입니다. 
-
-## 24.07.12 수업 내용
-
-- deep copy를 사용해야 합니다.
-1. b = a[:] # 1번
-2. b = a.copy() # 2번
+데이터 분석을 공부하는 오서연입니다.
