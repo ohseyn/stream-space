@@ -1,5 +1,5 @@
 ---
-title: "stream-space"
+title: "myblog"
 listing:
   contents: posts
   sort: "date desc"
