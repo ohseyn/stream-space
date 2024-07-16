@@ -1,10 +1,12 @@
 ---
 title: "stream-space"
 listing:
-  contents: posts
+  contents: docs
   sort: "date desc"
   type: default
   categories: true
+  feed:
+      categories: [homework, posts]
 jupyter: python3
 ---
 
