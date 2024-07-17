@@ -130,7 +130,7 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "Homework(1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhomework2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Homework(1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨 Homework1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework2.html",
@@ -348,5 +348,12 @@
     "title": "Homework(1)",
     "section": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
     "text": "’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\nmidwest[\"asian_mean\"].value_counts()\ncount_mean = midwest[\"asian_mean\"].value_counts()\ncount_mean.plot.bar(rot = 0)\nplot.show()"
+  },
+  {
+    "objectID": "posts/hw1/index.html",
+    "href": "posts/hw1/index.html",
+    "title": "LS 빅데이터스쿨 Homework1",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
   }
 ]

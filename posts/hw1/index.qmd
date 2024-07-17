@@ -1,0 +1,11 @@
+---
+title: "LS 빅데이터스쿨"
+jupyter: python3
+author: "ohseyn"
+date: "2024-07-08"
+categories: [bigdata]
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+![](thumbnail.jpg)

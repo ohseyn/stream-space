@@ -1,6 +1,9 @@
 ---
 title: "Homework(1)"
 jupyter: python3
+author: "ohseyn"
+date: "2024-07-15"
+categories: [bigdata]
 ---
 
 ## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.

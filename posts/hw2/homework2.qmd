@@ -1,6 +1,9 @@
 ---
 title: "Homework(2)"
 jupyter: python3
+author: "ohseyn"
+date: "2024-07-16"
+categories: [bigdata]
 ---
 
 ## 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.

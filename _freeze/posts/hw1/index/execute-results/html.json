@@ -1,0 +1,12 @@
+{
+  "hash": "d6becce352c900523ec5c12c6be14e37",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: LS 빅데이터스쿨 Homework1\nauthor: ohseyn\ndate: '2024-07-12'\ncategories:\n  - bigdata\n---\n\nThis is the first post in a Quarto blog. Welcome!\n\n![](thumbnail.jpg)\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
