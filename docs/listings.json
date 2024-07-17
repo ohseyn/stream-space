@@ -2,8 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/hw1/homework1.html",
       "/posts/hw2/homework2.html",
+      "/posts/hw1/homework1.html",
       "/posts/hw1/index.html"
     ]
   }
