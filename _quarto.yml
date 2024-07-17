@@ -10,10 +10,8 @@ website:
         text: Home
       - href: about.qmd
         text: about
-      - href: homework1.qmd
-        text: homework1
-      - href: homework2.qmd
-        text: homework2
+      - href: blog.qmd
+        text: Blog
 
 format:
   html:
