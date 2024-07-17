@@ -33,7 +33,7 @@ sum(df_fruit['판매량'])/len(df_fruit)
 
 ```{python}
 import pandas as pd
-mpg = pd.read_csv("C:/Doit_Python-main/Data/mpg.csv")
+mpg = pd.read_csv("C:/Data/mpg.csv")
 mpg_new = mpg.copy()
 mpg_new
 ```
@@ -55,7 +55,7 @@ mpg_new[0:5]
 
 ```{python}
 import pandas as pd
-midwest = pd.read_csv("C:/Doit_Python-main/Data/midwest.csv")
+midwest = pd.read_csv("C:/Data/midwest.csv")
 
 midwest.head()
 midwest.tail()

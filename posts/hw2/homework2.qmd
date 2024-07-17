@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-mpg = pd.read_csv("C:/Doit_Python-main/Data/mpg.csv")
+mpg = pd.read_csv("C:/Data/mpg.csv")
 mpg_new = mpg.copy()
 mpg_new
 ```
@@ -67,7 +67,7 @@ audi.sort_values("hwy", ascending = False).head()
 
 ## mpg 데이터 복사본을 만들고, cty와 hwy를 더한 '합산 연비 변수'를 추가하세요. 
 ```{python}
-mpg = pd.read_csv("C:/Doit_Python-main/Data/mpg.csv")
+mpg = pd.read_csv("C:/Data/mpg.csv")
 mpg_new = mpg.copy()
 mpg_new
 

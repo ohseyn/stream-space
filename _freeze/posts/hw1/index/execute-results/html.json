@@ -1,8 +1,8 @@
 {
-  "hash": "d6becce352c900523ec5c12c6be14e37",
+  "hash": "ed80d4085c75a91c6dc6aca8d4b453ef",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: LS 빅데이터스쿨 Homework1\nauthor: ohseyn\ndate: '2024-07-12'\ncategories:\n  - bigdata\n---\n\nThis is the first post in a Quarto blog. Welcome!\n\n![](thumbnail.jpg)\n\n",
+    "markdown": "---\ntitle: LS 빅데이터스쿨\nauthor: ohseyn\ndate: '2024-07-08'\ncategories:\n  - bigdata\n---\n\nThis is the first post in a Quarto blog. Welcome!\n\n![](thumbnail.jpg)\n\n",
     "supporting": [
       "index_files"
     ],
