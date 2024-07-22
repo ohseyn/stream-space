@@ -1,0 +1,86 @@
+---
+title: "240722 12장 수업"
+jupyter: python3
+author: "ohseyn"
+date: "2024-07-22"
+categories: [bigdata]
+---
+
+## 그래프 만들기
+
+```{python}
+import pandas as pd
+
+mpg = pd.read_csv("C:/Data/mpg.csv")
+mpg.shape
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.scatterplot(data=mpg, x="displ", y="hwy")
+plt.show()
+plt.clf()
+```
+
+### hue 추가
+
+```{python}
+sns.scatterplot(data=mpg, x="displ", y="hwy", hue="drv")
+plt.show()
+plt.clf()
+```
+
+### 축 제한
+
+```{python}
+sns.scatterplot(data=mpg, x="displ", y="hwy").set(xlim=[3,6], ylim=[10,30])
+plt.show()
+plt.clf()
+```
+
+
+## 막대 그래프
+
+```{python}
+mpg["drv"].unique()
+df_mpg = mpg.groupby("drv", as_index=False).agg(mean_hwy = ("hwy", "mean"))
+sns.barplot(data=df_mpg, x="drv", y="mean_hwy", hue="drv")
+plt.show()
+plt.clf()
+```
+
+### 크기순 정렬
+```{python}
+sns.barplot(data=df_mpg.sort_values("mean_hwy", ascending = False), x="drv", y="mean_hwy", hue="drv")
+plt.show()
+plt.clf()
+```
+
+## 빈도 막대 그래프(countplot())
+
+```{python}
+df_mpg = mpg.groupby("drv", as_index=False).agg(n=("drv", "count"))
+sns.countplot(data=mpg, x="drv", hue="drv") # countplot(빈도 막대), 원본 데이터
+plt.show()
+plt.clf()
+```
+
+### cf) barplot
+```{python}
+sns.barplot(data=df_mpg, x="drv", y="n", hue="drv") # barplot(막대), 3행 2열 데이터
+plt.show()
+plt.clf()
+```
+
+## 산점도 만들기
+```{python}
+import plotly.express as px
+px.scatter(data_frame = mpg, x = "cty", y = "hwy", color="drv")
+```
+
+## 막대 그래프 만들기
+```{python}
+df = mpg.groupby("category", as_index = False).agg(n = ("category", "count"))
+px.bar(data_frame = df, x = "category", y = "n", color = "category")
+```
+
