@@ -6,7 +6,7 @@ date: "2024-07-22"
 categories: [bigdata]
 ---
 
-## 그래프 만들기
+## 산점도 만들기
 
 ```{python}
 import pandas as pd

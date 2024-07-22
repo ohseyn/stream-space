@@ -130,7 +130,7 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "240722\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
+    "text": "240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework2.html",
@@ -404,5 +404,40 @@
     "title": "240722",
     "section": "막대 그래프 만들기",
     "text": "막대 그래프 만들기\n\ndf = mpg.groupby(\"category\", as_index = False).agg(n = (\"category\", \"count\"))\npx.bar(data_frame = df, x = \"category\", y = \"n\", color = \"category\")"
+  },
+  {
+    "objectID": "posts/hw3/homework3.html",
+    "href": "posts/hw3/homework3.html",
+    "title": "homework3",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Data/mpg.csv\")\nsns.scatterplot(data = mpg, x = \"cty\", y = \"hwy\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/homework3.html#mpg-데이터의-cty도시-연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.",
+    "href": "posts/hw3/homework3.html#mpg-데이터의-cty도시-연비와-hwy고속도로-연비-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.",
+    "title": "homework3",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Data/mpg.csv\")\nsns.scatterplot(data = mpg, x = \"cty\", y = \"hwy\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/homework3.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "href": "posts/hw3/homework3.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "title": "homework3",
+    "section": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
+    "text": "미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv(\"C:/Data/midwest.csv\")\nsns.scatterplot(data = midwest, x = \"poptotal\", y = \"popasian\").set(xlim=[0,500000], ylim=[0,10000])\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/homework3.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "href": "posts/hw3/homework3.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "title": "homework3",
+    "section": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
+    "text": "어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv(\"C:/Data/mpg.csv\")\nsuv = mpg.query(\"category == 'suv'\").groupby(\"manufacturer\", as_index = False)\\\n                                    .agg(mean_cty = (\"cty\", \"mean\"))\\\n                                    .sort_values(\"mean_cty\", ascending = False)\\\n                                    .head(5)\nsns.barplot(data = suv, x = \"manufacturer\", y = \"mean_cty\", hue = \"manufacturer\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/homework3.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
+    "href": "posts/hw3/homework3.html#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.",
+    "title": "homework3",
+    "section": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.",
+    "text": "자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_category = mpg.groupby(\"category\", as_index = False)\\\n                .agg(category_count = (\"category\", \"count\"))\\\n                .sort_values(\"category_count\", ascending = False)\nsns.barplot(data = df_category, x = \"category\", y = \"category_count\", hue = \"category\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
   }
 ]
