@@ -1,5 +1,5 @@
 ---
-title: "homework3"
+title: "homework(3)"
 jupyter: python3
 author: "ohseyn"
 date: "2024-07-22"
