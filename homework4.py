@@ -27,9 +27,10 @@ plt.show()
 plt.clf()
 
 # 2번
-norm.cdf(3, 2, 3)
-norm.cdf(5, 2, 3) - norm.cdf(2, 2, 3)
-norm.cdf(3, 2, 3) + (1 - norm.cdf(7, 2, 3))
+norm.cdf(3, loc=2, scale=3)
+norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3)
+norm.cdf(3, loc=2, scale=3) + (1 - norm.cdf(7, loc=2, scale=3))
 
 # 3번
-norm.ppf(0.95, 30, 2)
+norm.ppf(0.95, loc=30, scale=2)
+
