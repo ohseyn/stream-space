@@ -14,10 +14,8 @@ plt.plot(x_values, pdf_values)
 plt.show()
 plt.clf()
 
-#=================================
 # 1번 다르게
 # math는 값을 하나만 받음. np는 벡터 처리가 가능함.
-
 def Norm(x, mu, sigma):
     return (1/(sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mu) / sigma)**2)
 k=np.linspace(-7,13,100)
@@ -29,11 +27,9 @@ plt.show()
 plt.clf()
 
 # 2번
-
 norm.cdf(3, 2, 3)
 norm.cdf(5, 2, 3) - norm.cdf(2, 2, 3)
 norm.cdf(3, 2, 3) + (1 - norm.cdf(7, 2, 3))
 
-#=================================
-
+# 3번
 norm.ppf(0.95, 30, 2)
