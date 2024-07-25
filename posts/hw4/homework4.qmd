@@ -1,0 +1,53 @@
+---
+title: "homework(4)"
+jupyter: python3
+author: "ohseyn"
+date: "2024-07-25"
+categories: [bigdata]
+---
+
+## 1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것.
+
+```{python}
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+def my_pdf(x, mu, sigma):
+    return ((sigma * math.sqrt(2*math.pi))**(-1)) * (math.exp((-1)*((x-mu)**2)/2*sigma**2))
+
+x_values = np.linspace(0, 6, 100)
+pdf_values = [my_pdf(x, 3, 2) for x in x_values]
+
+plt.plot(x_values, pdf_values)
+plt.show()
+plt.clf()
+
+```
+
+## 2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오. X ~ N(2, 3^2)
+
+### 1) P(X < 3)
+
+```{python}
+from scipy.stats import norm
+norm.cdf(3, 3, 2)
+```
+
+### 2) P(2 < X < 5)
+
+```{python}
+norm.cdf(5, 3, 2) - norm.cdf(2, 3, 2)
+```
+
+### 3) P(X < 3 or X > 7)
+
+```{python}
+norm.cdf(3, 3, 2) + (1 - norm.cdf(7, 3, 2))
+```
+
+## 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?
+
+```{python}
+norm.ppf(0.95, 30, 2)
+```
