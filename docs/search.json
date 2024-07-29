@@ -130,7 +130,7 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "homework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
+    "text": "homework5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework2.html",
@@ -467,5 +467,26 @@
     "title": "homework(4)",
     "section": "3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?",
     "text": "3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?\n\nnorm.ppf(0.95, 30, 2)\n\nnp.float64(33.28970725390295)"
+  },
+  {
+    "objectID": "posts/hw5/homework5.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
+    "href": "posts/hw5/homework5.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
+    "title": "homework5",
+    "section": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)",
+    "text": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)\n\ns_2\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\nfrom scipy.stats import uniform\n\nx = uniform.rvs(loc=3, scale=7, size=20*10000).reshape(-1, 20)\n\ns_2 = x.var(axis=1, ddof=1)\nsns.histplot(s_2, stat=\"density\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n\nk_2\n\nk_2 = x.var(axis=1, ddof=0)\nsns.histplot(k_2, stat=\"density\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw5/homework5.html#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "href": "posts/hw5/homework5.html#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "title": "homework5",
+    "section": "2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.",
+    "text": "2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.\n\ns_2\n\nx = uniform.rvs(loc=3, scale=7, size=20*10000).reshape(-1, 20)\n\ns_2 = x.var(axis=1, ddof=1)\nsns.histplot(s_2, stat=\"density\")\nplt.axvline(x=np.var(x), color='green', linestyle='-', linewidth=1)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n\nk_2\n\nk_2 = x.var(axis=1, ddof=0)\nsns.histplot(k_2, stat=\"density\")\nplt.axvline(x=np.var(x), color='green', linestyle='-', linewidth=1)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw5/homework5.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요",
+    "href": "posts/hw5/homework5.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요",
+    "title": "homework5",
+    "section": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!",
+    "text": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!\n\n표에서 알 수 있듯, s_2의 그래프가 k_2의 그래프보다 더 정확하기에 분산을 추정하는 지표로 n-1을 사용하는 것이 타당하다. 또한, 표본의 분산의 기대치를 추정할 경우, 수학적으로 정확하게 모집단의 분산으로 유도가 되기 때문에 n-1로 해야하는 것이 맞다."
   }
 ]

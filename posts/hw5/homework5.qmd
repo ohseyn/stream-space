@@ -1,0 +1,65 @@
+---
+title: "homework5"
+jupyter: python3
+author: "ohseyn"
+date: "2024-07-29"
+categories: [bigdata]
+---
+
+## 표본 분산 계산 시 왜 n-1로 나누는지 알아보도록 하겠습니다. 균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.
+
+## 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
+
+### s_2
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from scipy.stats import uniform
+
+x = uniform.rvs(loc=3, scale=7, size=20*10000).reshape(-1, 20)
+
+s_2 = x.var(axis=1, ddof=1)
+sns.histplot(s_2, stat="density")
+plt.show()
+plt.clf()
+```
+
+### k_2
+
+```{python}
+k_2 = x.var(axis=1, ddof=0)
+sns.histplot(k_2, stat="density")
+plt.show()
+plt.clf()
+```
+
+
+## 2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
+
+### s_2
+
+```{python}
+x = uniform.rvs(loc=3, scale=7, size=20*10000).reshape(-1, 20)
+
+s_2 = x.var(axis=1, ddof=1)
+sns.histplot(s_2, stat="density")
+plt.axvline(x=np.var(x), color='green', linestyle='-', linewidth=1)
+plt.show()
+plt.clf()
+```
+
+### k_2
+
+```{python}
+k_2 = x.var(axis=1, ddof=0)
+sns.histplot(k_2, stat="density")
+plt.axvline(x=np.var(x), color='green', linestyle='-', linewidth=1)
+plt.show()
+plt.clf()
+```
+
+## 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!
+
+- 표에서 알 수 있듯, s_2의 그래프가 k_2의 그래프보다 더 정확하기에 분산을 추정하는 지표로 n-1을 사용하는 것이 타당하다. 또한, 표본의 분산의 기대치를 추정할 경우, 수학적으로 정확하게 모집단의 분산으로 유도가 되기 때문에 n-1로 해야하는 것이 맞다.
