@@ -186,6 +186,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#데이터-불러오기" id="toc-데이터-불러오기" class="nav-link active" data-scroll-target="#데이터-불러오기">데이터 불러오기</a></li>
   <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프">그래프</a></li>
   <li><a href="#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시" id="toc-숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시" class="nav-link" data-scroll-target="#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시">숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시</a></li>
+  <li><a href="#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1" id="toc-숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1" class="nav-link" data-scroll-target="#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1">숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시</a>
+  <ul class="collapse">
+  <li><a href="#수직선axvline이-있으면-수평선axhline도-그릴-수-있음을-깨닫고-그린-그래프" id="toc-수직선axvline이-있으면-수평선axhline도-그릴-수-있음을-깨닫고-그린-그래프" class="nav-link" data-scroll-target="#수직선axvline이-있으면-수평선axhline도-그릴-수-있음을-깨닫고-그린-그래프">(수직선(axvline)이 있으면 수평선(axhline)도 그릴 수 있음을 깨닫고 그린 그래프)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="데이터-불러오기" class="level2">
 <h2 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h2>
-<div id="fc78d4f5" class="cell" data-execution_count="1">
+<div id="e1654623" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -238,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="그래프" class="level2">
 <h2 class="anchored" data-anchor-id="그래프">그래프</h2>
-<div id="d8888bf7" class="cell" data-execution_count="2">
+<div id="080480eb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">"income"</span>].describe() </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">"income"</span>].isna().<span class="bu">sum</span>() </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>welfare[<span class="st">"income"</span>]<span class="op">=</span>np.where(welfare[<span class="st">"income"</span>] <span class="op">==</span> <span class="dv">9999</span>, np.nan, welfare[<span class="st">"income"</span>])</span>
@@ -263,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시" class="level2">
 <h2 class="anchored" data-anchor-id="숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시">숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시</h2>
-<div id="500ee141" class="cell" data-execution_count="3">
+<div id="f54c6c06" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>my_df <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">"income"</span>)<span class="op">\</span></span>
@@ -290,8 +294,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
+</section>
+<section id="숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1" class="level2">
+<h2 class="anchored" data-anchor-id="숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1">숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시</h2>
+<section id="수직선axvline이-있으면-수평선axhline도-그릴-수-있음을-깨닫고-그린-그래프" class="level3">
+<h3 class="anchored" data-anchor-id="수직선axvline이-있으면-수평선axhline도-그릴-수-있음을-깨닫고-그린-그래프">(수직선(axvline)이 있으면 수평선(axhline)도 그릴 수 있음을 깨닫고 그린 그래프)</h3>
+<div id="6876792f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>my_df <span class="op">=</span> welfare.dropna(subset <span class="op">=</span> <span class="st">"income"</span>)<span class="op">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            .groupby(<span class="st">"sex"</span>, as_index <span class="op">=</span> <span class="va">False</span>)<span class="op">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            .agg(mean <span class="op">=</span> (<span class="st">"income"</span>,<span class="st">"mean"</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>             std <span class="op">=</span> (<span class="st">"income"</span>,<span class="st">"std"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>             n <span class="op">=</span> (<span class="st">"sex"</span>,<span class="st">"count"</span>))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>my_df[<span class="st">"bottom_ci"</span>] <span class="op">=</span> my_df[<span class="st">"mean"</span>] <span class="op">-</span> <span class="fl">1.96</span><span class="op">*</span>my_df[<span class="st">"std"</span>]<span class="op">/</span>np.sqrt(my_df[<span class="st">"n"</span>])</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>my_df[<span class="st">"upper_ci"</span>] <span class="op">=</span> my_df[<span class="st">"mean"</span>] <span class="op">+</span> <span class="fl">1.96</span><span class="op">*</span>my_df[<span class="st">"std"</span>]<span class="op">/</span>np.sqrt(my_df[<span class="st">"n"</span>])</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>my_df[<span class="st">"bottom_ci"</span>][<span class="dv">0</span>], color<span class="op">=</span><span class="st">'r'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>my_df[<span class="st">"upper_ci"</span>][<span class="dv">0</span>], color<span class="op">=</span><span class="st">'r'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>my_df[<span class="st">"bottom_ci"</span>][<span class="dv">1</span>], color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span>my_df[<span class="st">"upper_ci"</span>][<span class="dv">1</span>], color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> my_df, x <span class="op">=</span> <span class="st">"sex"</span>, y <span class="op">=</span><span class="st">"mean"</span>) </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework6_files/figure-html/cell-5-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

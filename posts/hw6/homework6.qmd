@@ -71,3 +71,26 @@ plt.show()
 plt.clf()
 ```
 
+## 숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시
+### (수직선(axvline)이 있으면 수평선(axhline)도 그릴 수 있음을 깨닫고 그린 그래프)
+
+```{python}
+from scipy.stats import norm
+
+my_df = welfare.dropna(subset = "income")\
+            .groupby("sex", as_index = False)\
+            .agg(mean = ("income","mean"),
+             std = ("income","std"),
+             n = ("sex","count"))
+
+my_df["bottom_ci"] = my_df["mean"] - 1.96*my_df["std"]/np.sqrt(my_df["n"])
+my_df["upper_ci"] = my_df["mean"] + 1.96*my_df["std"]/np.sqrt(my_df["n"])
+plt.axhline(y=my_df["bottom_ci"][0], color='r', linewidth=1)
+plt.axhline(y=my_df["upper_ci"][0], color='r', linewidth=1)
+plt.axhline(y=my_df["bottom_ci"][1], color='g', linewidth=1)
+plt.axhline(y=my_df["upper_ci"][1], color='g', linewidth=1)
+
+sns.barplot(data = my_df, x = "sex", y ="mean") 
+plt.show()
+plt.clf()
+```

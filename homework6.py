@@ -46,7 +46,7 @@ my_df = welfare.dropna(subset = "income")\
 my_df["bottom_ci"] = my_df["mean"] - 1.96*my_df["std"]/np.sqrt(my_df["n"])
 my_df["upper_ci"] = my_df["mean"] + 1.96*my_df["std"]/np.sqrt(my_df["n"])
 plt.errorbar(my_df["sex"], my_df["mean"], yerr=1.96 * my_df["std"] / np.sqrt(my_df["n"]), 
-             fmt='none', c='black', capsize=5)
+            fmt='none', c='black', capsize=5)
 sns.barplot(data = my_df, x = "sex", y ="mean") 
 plt.show()
 plt.clf()

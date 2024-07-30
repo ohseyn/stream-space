@@ -516,5 +516,12 @@
     "title": "homework6",
     "section": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시",
     "text": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시\n\nfrom scipy.stats import norm\n\nmy_df = welfare.dropna(subset = \"income\")\\\n            .groupby(\"sex\", as_index = False)\\\n            .agg(mean = (\"income\",\"mean\"),\n             std = (\"income\",\"std\"),\n             n = (\"sex\",\"count\"))\n\nmy_df[\"bottom_ci\"] = my_df[\"mean\"] - 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nmy_df[\"upper_ci\"] = my_df[\"mean\"] + 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nplt.errorbar(my_df[\"sex\"], my_df[\"mean\"], yerr=1.96 * my_df[\"std\"] / np.sqrt(my_df[\"n\"]), \n             fmt='none', c='black', capsize=5)\nsns.barplot(data = my_df, x = \"sex\", y =\"mean\") \nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw6/homework6.html#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1",
+    "href": "posts/hw6/homework6.html#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시-1",
+    "title": "homework6",
+    "section": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시",
+    "text": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시\n\n(수직선(axvline)이 있으면 수평선(axhline)도 그릴 수 있음을 깨닫고 그린 그래프)\n\nfrom scipy.stats import norm\n\nmy_df = welfare.dropna(subset = \"income\")\\\n            .groupby(\"sex\", as_index = False)\\\n            .agg(mean = (\"income\",\"mean\"),\n             std = (\"income\",\"std\"),\n             n = (\"sex\",\"count\"))\n\nmy_df[\"bottom_ci\"] = my_df[\"mean\"] - 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nmy_df[\"upper_ci\"] = my_df[\"mean\"] + 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nplt.axhline(y=my_df[\"bottom_ci\"][0], color='r', linewidth=1)\nplt.axhline(y=my_df[\"upper_ci\"][0], color='r', linewidth=1)\nplt.axhline(y=my_df[\"bottom_ci\"][1], color='g', linewidth=1)\nplt.axhline(y=my_df[\"upper_ci\"][1], color='g', linewidth=1)\n\nsns.barplot(data = my_df, x = \"sex\", y =\"mean\") \nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
   }
 ]
