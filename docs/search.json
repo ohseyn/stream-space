@@ -130,7 +130,7 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "homework5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
+    "text": "homework6\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 30, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework2.html",
@@ -488,5 +488,33 @@
     "title": "homework5",
     "section": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!",
     "text": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!\n\n표에서 알 수 있듯, s_2의 그래프가 k_2의 그래프보다 더 정확하기에 분산을 추정하는 지표로 n-1을 사용하는 것이 타당하다. 또한, 표본의 분산의 기대치를 추정할 경우, 수학적으로 정확하게 모집단의 분산으로 유도가 되기 때문에 n-1로 해야하는 것이 맞다."
+  },
+  {
+    "objectID": "posts/hw6/homework6.html",
+    "href": "posts/hw6/homework6.html",
+    "title": "homework6",
+    "section": "",
+    "text": "import seaborn as sns\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nraw_welfare = pd.read_spss(\"C:/Data/Koweps_hpwc14_2019_beta2.sav\")\nwelfare = raw_welfare.copy()\n\nwelfare = welfare.rename(\n    columns = {\"h14_g3\" :\"sex\",\n                \"h14_g4\" : \"birth\",\n                \"h14_g10\" : \"marriage_type\",\n                \"h14_g11\" : \"religion\",\n                \"p1402_8aq1\" : \"income\",\n                \"h14_eco9\" : \"code_job\",\n                \"h14_reg7\" : \"code_region\"})\nwelfare = welfare[[\"sex\", \"birth\", \"marriage_type\", \"religion\", \"income\", \"code_job\", \"code_region\"]]\n\nwelfare[\"sex\"].dtypes\nwelfare[\"sex\"].value_counts()\nwelfare[\"sex\"].isna().sum() \nwelfare[\"sex\"]=np.where(welfare[\"sex\"]==1, \"male\", \"female\") \nsns.countplot(data = welfare, x = \"sex\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw6/homework6.html#데이터-불러오기",
+    "href": "posts/hw6/homework6.html#데이터-불러오기",
+    "title": "homework6",
+    "section": "",
+    "text": "import seaborn as sns\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nraw_welfare = pd.read_spss(\"C:/Data/Koweps_hpwc14_2019_beta2.sav\")\nwelfare = raw_welfare.copy()\n\nwelfare = welfare.rename(\n    columns = {\"h14_g3\" :\"sex\",\n                \"h14_g4\" : \"birth\",\n                \"h14_g10\" : \"marriage_type\",\n                \"h14_g11\" : \"religion\",\n                \"p1402_8aq1\" : \"income\",\n                \"h14_eco9\" : \"code_job\",\n                \"h14_reg7\" : \"code_region\"})\nwelfare = welfare[[\"sex\", \"birth\", \"marriage_type\", \"religion\", \"income\", \"code_job\", \"code_region\"]]\n\nwelfare[\"sex\"].dtypes\nwelfare[\"sex\"].value_counts()\nwelfare[\"sex\"].isna().sum() \nwelfare[\"sex\"]=np.where(welfare[\"sex\"]==1, \"male\", \"female\") \nsns.countplot(data = welfare, x = \"sex\")\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw6/homework6.html#그래프",
+    "href": "posts/hw6/homework6.html#그래프",
+    "title": "homework6",
+    "section": "그래프",
+    "text": "그래프\n\nwelfare[\"income\"].describe() \nwelfare[\"income\"].isna().sum() \nwelfare[\"income\"]=np.where(welfare[\"income\"] == 9999, np.nan, welfare[\"income\"])\n\nsex_income = welfare.dropna(subset = \"income\")\\\n            .groupby(\"sex\", as_index=False)\\\n            .agg(mean_income=(\"income\", \"mean\"))\nsns.barplot(data = sex_income, x = \"sex\", y =\"mean_income\") \nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw6/homework6.html#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시",
+    "href": "posts/hw6/homework6.html#숙제-위-그래프에서-각-성별-95-신뢰구간-계산-후-그리기.-위-아래-검정색-막대기로-표시",
+    "title": "homework6",
+    "section": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시",
+    "text": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시\n\nfrom scipy.stats import norm\n\nmy_df = welfare.dropna(subset = \"income\")\\\n            .groupby(\"sex\", as_index = False)\\\n            .agg(mean = (\"income\",\"mean\"),\n             std = (\"income\",\"std\"),\n             n = (\"sex\",\"count\"))\n\nmy_df[\"bottom_ci\"] = my_df[\"mean\"] - 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nmy_df[\"upper_ci\"] = my_df[\"mean\"] + 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nplt.errorbar(my_df[\"sex\"], my_df[\"mean\"], yerr=1.96 * my_df[\"std\"] / np.sqrt(my_df[\"n\"]), \n             fmt='none', c='black', capsize=5)\nsns.barplot(data = my_df, x = \"sex\", y =\"mean\") \nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
   }
 ]
