@@ -130,7 +130,7 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "homework6\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 30, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
+    "text": "homework7\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework6\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 30, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework5\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(4)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\n240722 12장 수업\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nhomework(3)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(2)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nHomework(1)\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nohseyn\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터스쿨\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 8, 2024\n\n\nohseyn\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework2.html",
@@ -523,5 +523,40 @@
     "title": "homework6",
     "section": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시",
     "text": "숙제: 위 그래프에서 각 성별 95% 신뢰구간 계산 후 그리기. 위 아래 검정색 막대기로 표시\n\n(수직선(axvline)이 있으면 수평선(axhline)도 그릴 수 있음을 깨닫고 그린 그래프)\n\nfrom scipy.stats import norm\n\nmy_df = welfare.dropna(subset = \"income\")\\\n            .groupby(\"sex\", as_index = False)\\\n            .agg(mean = (\"income\",\"mean\"),\n             std = (\"income\",\"std\"),\n             n = (\"sex\",\"count\"))\n\nmy_df[\"bottom_ci\"] = my_df[\"mean\"] - 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nmy_df[\"upper_ci\"] = my_df[\"mean\"] + 1.96*my_df[\"std\"]/np.sqrt(my_df[\"n\"])\nplt.axhline(y=my_df[\"bottom_ci\"][0], color='r', linewidth=1)\nplt.axhline(y=my_df[\"upper_ci\"][0], color='r', linewidth=1)\nplt.axhline(y=my_df[\"bottom_ci\"][1], color='g', linewidth=1)\nplt.axhline(y=my_df[\"upper_ci\"][1], color='g', linewidth=1)\n\nsns.barplot(data = my_df, x = \"sex\", y =\"mean\") \nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw7/homework7.html#슬통-자동자는-매해-출시되는-신형-자동차의-에너지-소비효율-등급을-1등급으로-유지하고-있다.-22년-개발된-신형-모델이-한국-자동차-평가원에서-설정한-에너지-소비-효율등급-1등급을-받을-수-있을지-검정하려한다.-평가원에-따르면-1등급의-기준은-평균-복합-에너지-소비효율이-16.0-이상인-경우-부여한다고-한다.-다음은-신형-자동차-15대의-복합-에너지소비효율-측정한-결과이다.",
+    "href": "posts/hw7/homework7.html#슬통-자동자는-매해-출시되는-신형-자동차의-에너지-소비효율-등급을-1등급으로-유지하고-있다.-22년-개발된-신형-모델이-한국-자동차-평가원에서-설정한-에너지-소비-효율등급-1등급을-받을-수-있을지-검정하려한다.-평가원에-따르면-1등급의-기준은-평균-복합-에너지-소비효율이-16.0-이상인-경우-부여한다고-한다.-다음은-신형-자동차-15대의-복합-에너지소비효율-측정한-결과이다.",
+    "title": "homework7",
+    "section": "슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다.",
+    "text": "슬통 자동자는 매해 출시되는 신형 자동차의 에너지 소비효율 등급을 1등급으로 유지하고 있다. 22년 개발된 신형 모델이 한국 자동차 평가원에서 설정한 에너지 소비 효율등급 1등급을 받을 수 있을지 검정하려한다. 평가원에 따르면 1등급의 기준은 평균 복합 에너지 소비효율이 16.0 이상인 경우 부여한다고 한다. 다음은 신형 자동차 15대의 복합 에너지소비효율 측정한 결과이다.\n15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804\n표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지 판단해보시오. (유의수준 1%로 설정)\n\n2. 검정을 위한 가설을 명확하게 서술하시오.\n\n22년 개발된 신형 모델이 1등급이다.(=평균 복합 에너지 소비효율이 16.0 이상이다.)\n\n\n\n3. 검정통계량 계산하시오.\n\nimport pandas as pd\nimport numpy as np\nfrom scipy.stats import norm\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nt = (car.mean() - 16.0) / (car.std(ddof=1)/np.sqrt(15))\n\n\n\n4. p‑value을 구하세요.\n\nnorm.cdf(t, loc=0, scale=1)\n\nnp.float64(0.03215355034031973)\n\n\n\n\n6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\n\nnorm.ppf(0.975, loc=car.mean(), scale=car.std(ddof=1))\nnorm.ppf(0.025, loc=car.mean(), scale=car.std(ddof=1))\n\nnp.float64(13.61039108783131)\n\n\n\n(13.61, 17.45)"
+  },
+  {
+    "objectID": "posts/hw7/homework7.html#section",
+    "href": "posts/hw7/homework7.html#section",
+    "title": "homework7",
+    "section": "15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804",
+    "text": "15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804"
+  },
+  {
+    "objectID": "posts/hw7/homework7.html#표본에-의하여-판단해볼때-현대자동차의-신형-모델은-에너지-효율-1등급으로-판단할-수-있을지",
+    "href": "posts/hw7/homework7.html#표본에-의하여-판단해볼때-현대자동차의-신형-모델은-에너지-효율-1등급으로-판단할-수-있을지",
+    "title": "homework7",
+    "section": "표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지",
+    "text": "표본에 의하여 판단해볼때, 현대자동차의 신형 모델은 에너지 효율 1등급으로 판단할 수 있을지\n판단해보시오. (유의수준 1%로 설정)\n\n2. 검정을 위한 가설을 명확하게 서술하시오.\n\n22년 개발된 신형 모델이 1등급이다.(=평균 복합 에너지 소비효율이 16.0 이상이다.)\n\n\n\n3. 검정통계량 계산하시오.\n\nimport pandas as pd\nimport numpy as np\nfrom scipy.stats import norm\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nt = (car.mean() - 16.0) / (car.std(ddof=1)/np.sqrt(15))\n\n\n\n4. p‑value을 구하세요.\n\nnorm.cdf(t, loc=0, scale=1)\n\nnp.float64(0.03215355034031973)\n\n\n\n\n6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\n\nnorm.ppf(0.975, loc=car.mean(), scale=car.std(ddof=1))\nnorm.ppf(0.025, loc=car.mean(), scale=car.std(ddof=1))\n\nnp.float64(13.61039108783131)\n\n\n\n(13.61, 17.45)"
+  },
+  {
+    "objectID": "posts/hw7/homework7.html",
+    "href": "posts/hw7/homework7.html",
+    "title": "homework7",
+    "section": "",
+    "text": "22년 개발된 신형 모델이 1등급이다.(=평균 복합 에너지 소비효율이 16.0 이상이다.)\n\n\n\n\n\nimport pandas as pd\nimport numpy as np\nfrom scipy.stats import norm\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nt = (car.mean() - 16.0) / (car.std(ddof=1)/np.sqrt(15))\n\n\n\n\n\nnorm.cdf(t, loc=0, scale=1)\n\nnp.float64(0.03215355034031973)\n\n\n\n\n\n\nnorm.ppf(0.975, loc=car.mean(), scale=car.std(ddof=1))\nnorm.ppf(0.025, loc=car.mean(), scale=car.std(ddof=1))\n\nnp.float64(13.61039108783131)\n\n\n\n(13.61, 17.45)"
+  },
+  {
+    "objectID": "posts/hw7/homework7.html#신형-자동차의-에너지-소비효율-등급",
+    "href": "posts/hw7/homework7.html#신형-자동차의-에너지-소비효율-등급",
+    "title": "homework7",
+    "section": "",
+    "text": "22년 개발된 신형 모델이 1등급이다.(=평균 복합 에너지 소비효율이 16.0 이상이다.)\n\n\n\n\n\nimport pandas as pd\nimport numpy as np\nfrom scipy.stats import norm\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nt = (car.mean() - 16.0) / (car.std(ddof=1)/np.sqrt(15))\n\n\n\n\n\nnorm.cdf(t, loc=0, scale=1)\n\nnp.float64(0.03215355034031973)\n\n\n\n\n\n\nnorm.ppf(0.975, loc=car.mean(), scale=car.std(ddof=1))\nnorm.ppf(0.025, loc=car.mean(), scale=car.std(ddof=1))\n\nnp.float64(13.61039108783131)\n\n\n\n(13.61, 17.45)"
   }
 ]
