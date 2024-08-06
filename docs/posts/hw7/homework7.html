@@ -193,6 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pvalue을-구하세요." id="toc-pvalue을-구하세요." class="nav-link" data-scroll-target="#pvalue을-구하세요.">4. p‑value을 구하세요.</a></li>
   <li><a href="#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." id="toc-현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="nav-link" data-scroll-target="#현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.">6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</a></li>
   </ul></li>
+  <li><a href="#따라서-p-value가-0.042이고-유의수준은-0.01이므로-유의확률이-유의수준보다-크기에-기각하지-못한다." id="toc-따라서-p-value가-0.042이고-유의수준은-0.01이므로-유의확률이-유의수준보다-크기에-기각하지-못한다." class="nav-link" data-scroll-target="#따라서-p-value가-0.042이고-유의수준은-0.01이므로-유의확률이-유의수준보다-크기에-기각하지-못한다.">따라서, p-value가 0.042이고, 유의수준은 0.01이므로 유의확률이 유의수준보다 크기에 기각하지 못한다.</a></li>
   </ul>
 </nav>
     </div>
@@ -217,12 +218,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="검정을-위한-가설을-명확하게-서술하시오." class="level3">
 <h3 class="anchored" data-anchor-id="검정을-위한-가설을-명확하게-서술하시오.">2. 검정을 위한 가설을 명확하게 서술하시오.</h3>
 <ul>
-<li>22년 개발된 신형 모델이 1등급이다.(=평균 복합 에너지 소비효율이 16.0 이상이다.)</li>
+<li><p>귀무가설: 22년 개발된 현대 자동차 신형 모델의 평균 에너지 소비 효율등급은 1등급 기준을 만족한다.</p></li>
+<li><p>대립가설: 22년 개발된 현대 자동차 신형 모델의 평균 에너지 소비 효율등급은 1등급 기준을 만족하지 않는다.</p></li>
 </ul>
 </section>
 <section id="검정통계량-계산하시오." class="level3">
 <h3 class="anchored" data-anchor-id="검정통계량-계산하시오.">3. 검정통계량 계산하시오.</h3>
-<div id="4accb7b6" class="cell" data-execution_count="1">
+<div id="2cda60c3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
@@ -233,20 +235,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (car.mean() <span class="op">-</span> <span class="fl">16.0</span>) <span class="op">/</span> (s<span class="op">/</span>np.sqrt(<span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>x_bar = 15.531733333333333</li>
+<li>s = 0.9802946690129646</li>
+<li>T = -1.8500447456376756</li>
+</ul>
 </section>
 <section id="pvalue을-구하세요." class="level3">
 <h3 class="anchored" data-anchor-id="pvalue을-구하세요.">4. p‑value을 구하세요.</h3>
-<div id="a3f718c6" class="cell" data-execution_count="2">
+<div id="06017768" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="bu">len</span>(car) <span class="op">-</span> <span class="dv">1</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>t.cdf(T, df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>np.float64(0.042762417664207845)</code></pre>
 </div>
 </div>
+<ul>
+<li>df = 14</li>
+<li>p-value = 0.042762417664207845</li>
+</ul>
 </section>
 <section id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요." class="level3">
 <h3 class="anchored" data-anchor-id="현대자동차의-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구해보세요.">6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.</h3>
-<div id="60b182f1" class="cell" data-execution_count="3">
+<div id="064376c3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">+</span> t.ppf(<span class="fl">0.975</span>, df) <span class="op">*</span> (s<span class="op">/</span>np.sqrt(<span class="dv">15</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="op">+</span> t.ppf(<span class="fl">0.025</span>, df) <span class="op">*</span> (s<span class="op">/</span>np.sqrt(<span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -256,9 +267,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>(14.98, 16.07)</li>
 </ul>
-
-
 </section>
+</section>
+<section id="따라서-p-value가-0.042이고-유의수준은-0.01이므로-유의확률이-유의수준보다-크기에-기각하지-못한다." class="level2">
+<h2 class="anchored" data-anchor-id="따라서-p-value가-0.042이고-유의수준은-0.01이므로-유의확률이-유의수준보다-크기에-기각하지-못한다.">따라서, p-value가 0.042이고, 유의수준은 0.01이므로 유의확률이 유의수준보다 크기에 기각하지 못한다.</h2>
+
+
 </section>
 
 </main> <!-- /main -->
