@@ -2,6 +2,21 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/index.html",
+      "/posts/hw7/homework7.html",
+      "/posts/hw6/homework6.html",
+      "/posts/hw5/homework5.html",
+      "/posts/hw4/homework4.html",
+      "/posts/240722/240722.html",
+      "/posts/hw3/homework3.html",
+      "/posts/hw2/homework2.html",
+      "/posts/hw1/homework1.html",
+      "/posts/hw1/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
       "/posts/hw7/homework7.html",
       "/posts/hw6/homework6.html",
       "/posts/hw5/homework5.html",
