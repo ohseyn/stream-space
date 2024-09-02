@@ -3,6 +3,7 @@
     "listing": "/blog.html",
     "items": [
       "/posts/index.html",
+      "/posts/hw8/homework8.html",
       "/posts/hw7/homework7.html",
       "/posts/hw6/homework6.html",
       "/posts/hw5/homework5.html",
@@ -17,6 +18,7 @@
   {
     "listing": "/posts/index.html",
     "items": [
+      "/posts/hw8/homework8.html",
       "/posts/hw7/homework7.html",
       "/posts/hw6/homework6.html",
       "/posts/hw5/homework5.html",
